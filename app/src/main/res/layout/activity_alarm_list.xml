@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/layout_padding"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".englishalarm.alarmlist.AlarmListFragment">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupEditAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="alarmTimeShowTV,alarmDeleteBtn,alarmEditBtn,alarmListWordRecyclerView"
+        />
+
+    <TextView
+        android:id="@+id/alarmTimeShowTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8:00"
+        android:textSize="48sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/alarmListWordRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarmTimeShowTV" />
+
+    <android.widget.Button
+        android:id="@+id/alarmDeleteBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:drawableTop="@drawable/ic_delete_skybluedeep"
+        android:paddingTop="16dp"
+        android:text="삭제"
+        android:textSize="16sp"
+        android:textColor="@color/skyBlueDeep"
+        android:background="@drawable/btn_bg_round"
+        app:layout_constraintBottom_toBottomOf="@+id/alarmEditBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/alarmEditBtn"
+        app:layout_constraintTop_toTopOf="@+id/alarmEditBtn" />
+
+    <android.widget.Button
+        android:id="@+id/alarmEditBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:drawableTop="@drawable/ic_edit_skybluedeep"
+        android:text="수정"
+        android:textSize="16sp"
+        android:paddingTop="16dp"
+        android:textColor="@color/skyBlueDeep"
+        android:background="@drawable/btn_bg_round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/alarmDeleteBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarmListWordRecyclerView" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupCreateAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="guideMsgAlarmCreate,alarmAddBtn"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/guideMsgAlarmCreate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="알람을 등록해주세요."
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/alarmAddBtn"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:elevation="12dp"
+        android:src="@drawable/ic_add_white"
+        app:fabSize="auto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="@color/colorPrimaryDark" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

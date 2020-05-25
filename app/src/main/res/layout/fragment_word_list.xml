@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/layout_padding"
+    tools:context=".vocabularylist.VocaListFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_vocaList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <com.sangjin.englishmaninkorea.customview.OnlyAlphabetEditText
+        android:id="@+id/et_englishWord"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="English word"
+        android:inputType="textUri"
+        android:maxLines="1"
+        app:layout_constraintBottom_toTopOf="@+id/et_koreanMeaning"
+        app:layout_constraintEnd_toStartOf="@+id/btn_vocaAdd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/et_koreanMeaning"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="한글 뜻"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLines="1"
+        app:layout_constraintBottom_toTopOf="@+id/btn_toWebView"
+        app:layout_constraintEnd_toEndOf="@+id/et_englishWord"
+        app:layout_constraintStart_toStartOf="@+id/et_englishWord"
+        app:layout_constraintTop_toBottomOf="@+id/et_englishWord" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_vocaAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/skyBlue"
+        android:text="입력"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:onClick="vocaAddClick"
+        app:layout_constraintBottom_toBottomOf="@+id/et_koreanMeaning"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et_englishWord"
+        app:layout_constraintTop_toTopOf="@+id/et_englishWord" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_toWebView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:text="네이버 단어장으로 가기"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_vocaAdd"
+        app:layout_constraintStart_toStartOf="@+id/et_englishWord"
+        app:layout_constraintTop_toBottomOf="@+id/et_koreanMeaning" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

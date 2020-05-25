@@ -1,0 +1,61 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/border_up_down"
+    android:layout_marginTop="16dp"
+    android:padding="8dp">
+
+
+    <TextView
+        android:id="@+id/tv_partTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        tools:text="오늘의 단어"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="18sp"
+        android:textColor="#000000" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_partTitle"
+        app:layout_constraintBottom_toTopOf="@+id/line_divide"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <View
+        android:id="@+id/line_divide"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/whiteSmoke"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/rv_item"
+        app:layout_constraintStart_toStartOf="@+id/rv_item"
+        tools:layout_editor_absoluteY="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/rv_item"
+        app:layout_constraintBottom_toTopOf="@+id/btn_other_word"
+        />
+
+
+    <Button
+        android:id="@+id/btn_other_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_refresh"
+        android:backgroundTint="@android:color/white"
+        android:text="다른 단어 보기 1/2"
+        android:textColor="@android:color/black"
+        android:layout_margin="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/line_divide"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
