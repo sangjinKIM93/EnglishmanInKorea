@@ -23,7 +23,9 @@
         android:id="@+id/btn_vocaselect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="추가"
+        android:text="추   가"
+        android:textStyle="bold"
+        android:backgroundTint="@android:color/holo_orange_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

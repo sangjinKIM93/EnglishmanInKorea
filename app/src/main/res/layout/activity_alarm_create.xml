@@ -86,7 +86,7 @@
         android:id="@+id/toVocaListBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/skyBlue"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:onClick="wordAddClick"
         android:text="단어장에서 선택"
         android:textSize="16sp"
