@@ -5,7 +5,6 @@
 추가적으로 영어단어장을 관리할 수 있고, 영어 학습 자료를 제공해줍니다.
 
 
-<br>
 
 <br><br>
     
@@ -25,7 +24,7 @@
   <img width="200" src="https://user-images.githubusercontent.com/62230118/82783211-00deae80-9e99-11ea-8390-1971a67c142a.jpg">
   <img width="200" src="https://user-images.githubusercontent.com/62230118/83261458-51863c80-a1f6-11ea-8c82-ec6432147abe.jpg">
 </div>
-<br>
+<br><br>
 
 > ## 2. 알람 생성
 > - 단어 등록 및 시간 설정  
@@ -40,7 +39,7 @@
   <img width="200" src="https://user-images.githubusercontent.com/62230118/82787127-bfea9800-9ea0-11ea-8482-b6737d42843e.jpg">
   <img width="200" src="https://user-images.githubusercontent.com/62230118/82787128-bfea9800-9ea0-11ea-8dce-5fea75e219e6.jpg">
 </div>
-<br>
+<br><br>
 
 > ## 3. 알람 실행
 > - 알람 실행 및 단어 퀴즈 완료시 알람 해제  
@@ -55,7 +54,7 @@
   <img width="200" src="https://user-images.githubusercontent.com/62230118/82783335-31bee380-9e99-11ea-84c1-e289bc460dd8.jpg">
   <img width="200" src="https://user-images.githubusercontent.com/62230118/82783337-32577a00-9e99-11ea-8516-c4a3013275fc.jpg">
 </div>
-<br>
+<br><br>
 
 > ## 4. 단어장
 > - 개인 단어 목록 관리  
@@ -67,7 +66,7 @@
   <img width="200" src="https://user-images.githubusercontent.com/62230118/82783286-21a70400-9e99-11ea-9179-280a789cd681.jpg">
   <img width="200" src="https://user-images.githubusercontent.com/62230118/82783289-223f9a80-9e99-11ea-8c07-4d7a485a5d33.jpg">
 </div>
-<br>
+<br><br>
 
 > ## 5. 영어 학습 페이지
 > - 영어 관련 학습을 할 수 있는 화면  
@@ -81,6 +80,6 @@
   <img width="200" src="https://user-images.githubusercontent.com/62230118/82783281-1fdd4080-9e99-11ea-9c7f-bda66cca0fe9.jpg">
   <img width="200" src="https://user-images.githubusercontent.com/62230118/82783285-210e6d80-9e99-11ea-8519-22cc004e4e6b.jpg">
 </div>
-<br>
+<br><br>
 
 
