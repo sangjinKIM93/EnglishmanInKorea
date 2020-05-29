@@ -14,9 +14,9 @@
 > ## 1. 알람 설정
 > - (등록된 알람이 없을 경우) 알람 생성 가능
 > - (동록된 알람이 있을 경우) 수정 및 삭제 가능  
-> nbsp; ○ 중점 사항  
-> nbsp; - LiveData를 활용하여 등록된 알람 유무 판단  
-> nbsp; - recyclerView LayoutManager로 flexboxLayout Manager 활용  
+> &nbsp; ### 중점 사항  
+> &nbsp; - LiveData를 활용하여 등록된 알람 유무 판단  
+> &nbsp; - recyclerView LayoutManager로 flexboxLayout Manager 활용  
 
 
 <div>
