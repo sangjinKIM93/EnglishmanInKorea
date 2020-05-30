@@ -5,10 +5,18 @@
 추가적으로 영어단어장을 관리할 수 있고, 영어 학습 자료를 제공해줍니다.
 
 
+<br><br>
+    
+# 중점 사항
+- MVVM 패턴 적용
+- AAC 활용(ViewModel, LiveData, Room)
+- RxJava 활용(네트워크 통신, local DB 입출력)
+- 중첩리사이클러뷰 및 각종 customView 제작
+- 로컬 캐시 적용(통신이 끊겨도 데이터 제공 )
 
 <br><br>
     
-# 주요 기능  
+# 기능 설명  
 
 > ## 1. 알람 목록
 > - (등록된 알람이 없을 경우) 알람 생성 가능
@@ -45,9 +53,8 @@
 > - 알람 실행 및 단어 퀴즈 완료시 알람 해제  
 >
 > &nbsp; # 중점 사항  
-> &nbsp; - 음악 재생, 무음 극복, 소리 크기 제어  
+> &nbsp; - AlarmManager를 통한 알람 음악 재생
 > &nbsp; - 틀린 경우 hint를 보여주는 CustomTextView 제작  
-> &nbsp; - Oreo 버전 이상에서는 ForegroundService를 통한 음악 재생  
 
 <div>
   <img width="200" src="https://user-images.githubusercontent.com/62230118/82783332-308db680-9e99-11ea-985a-37fdf80fdf5b.jpg">
@@ -60,7 +67,8 @@
 > - 개인 단어 목록 관리  
 >
 > &nbsp; # 중점 사항  
-> &nbsp; - 네이버 단어장을 웹뷰로 연동하여 내 단어장에 추가할 수 있는 기능
+> &nbsp; - 네이버 단어장을 웹뷰로 연동하여 내 단어장에 추가할 수 있는 기능  
+> &nbsp; - Room을 활용한 데이터   
 
 <div>
   <img width="200" src="https://user-images.githubusercontent.com/62230118/82783286-21a70400-9e99-11ea-9179-280a789cd681.jpg">
