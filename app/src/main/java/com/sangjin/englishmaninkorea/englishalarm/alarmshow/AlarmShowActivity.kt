@@ -1,16 +1,18 @@
 package com.sangjin.englishmaninkorea.englishalarm.alarmshow
 
 import android.content.Intent
-import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.sangjin.englishmaninkorea.R
-import android.view.WindowManager
+import android.media.AudioAttributes
+import android.media.Ringtone
+import android.media.RingtoneManager
+import android.net.Uri
 import android.os.Build
-import android.view.View
+import android.os.Bundle
+import android.view.WindowManager
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.sangjin.englishmaninkorea.englishalarm.AlarmResultActivity
+import com.sangjin.englishmaninkorea.R
 import com.sangjin.englishmaninkorea.englishalarm.FinishDialog
 import kotlinx.android.synthetic.main.activity_alarm_show.*
 
@@ -19,12 +21,15 @@ class AlarmShowActivity : AppCompatActivity() {
 
     private lateinit var viewModel: AlarmShowViewModel
 
-    val intentService: Intent by lazy {
-        Intent(this, AlarmService::class.java)
+    private var percentage: Int = 0
+
+    private val ringtone by lazy {
+        val uri = RingtoneManager.getActualDefaultRingtoneUri(application.baseContext, RingtoneManager.TYPE_ALARM)
+        RingtoneManager.getRingtone(this, uri)
     }
 
-    var percentage: Int = 0
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alarm_show)
@@ -33,12 +38,14 @@ class AlarmShowActivity : AppCompatActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED)
         window.addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD)
 
-        //시작과 동시에 service 동작(음악 실행)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            startForegroundService(intentService)
-        } else {
-            startService(intentService)
-        }
+        //ringtone으로 벨소리 설정
+        val audioAttributes =
+            AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_ALARM)
+                .build()
+
+        ringtone.audioAttributes = audioAttributes
+        ringtone.play()
 
         viewModel =  ViewModelProviders.of(this).get(AlarmShowViewModel::class.java)
 
@@ -72,8 +79,8 @@ class AlarmShowActivity : AppCompatActivity() {
     //모든 문제가 끝나고 퀴즈가 종료되었을때
     private fun quizFinished(gameFinished: Boolean?) {
         if (gameFinished == true) {
-            //음악 종료
-            stopService(intentService)
+
+            ringtone.stop()
 
             //종료 dialog 출력
             val dialog = FinishDialog(this)
@@ -112,7 +119,7 @@ class AlarmShowActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        stopService(intentService)
+        ringtone.stop()
         super.onDestroy()
     }
 

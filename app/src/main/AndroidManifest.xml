@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
 
     <application
         android:usesCleartextTraffic="true"
@@ -29,11 +30,6 @@
             android:name=".vocabularylist.naverword.NaverWordLinkActivity"
             android:hardwareAccelerated="true" />
         <activity android:name=".englishalarm.AlarmResultActivity"/>
-
-        <service
-            android:name=".englishalarm.alarmshow.AlarmService"
-            android:enabled="true"
-            android:exported="true" />
 
         <activity android:name=".englishalarm.alarmshow.AlarmShowActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"/>
