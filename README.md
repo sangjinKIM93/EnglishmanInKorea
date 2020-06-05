@@ -53,8 +53,8 @@
 > - 알람 실행 및 단어 퀴즈 완료시 알람 해제  
 >
 > &nbsp; # 중점 사항  
-> &nbsp; - AlarmManager를 통한 알람 음악 재생
-> &nbsp; - 틀린 경우 hint를 보여주는 CustomTextView 제작  
+> &nbsp; - AlarmManager를 통한 알람 음악 재생  
+> &nbsp; - 틀린 경우 hint를 보여주는 CustomTextView 제작    
 
 <div>
   <img width="200" src="https://user-images.githubusercontent.com/62230118/82783332-308db680-9e99-11ea-985a-37fdf80fdf5b.jpg">
