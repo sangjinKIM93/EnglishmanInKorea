@@ -68,7 +68,7 @@
 >
 > &nbsp; # 중점 사항  
 > &nbsp; - 네이버 단어장을 웹뷰로 연동하여 내 단어장에 추가할 수 있는 기능  
-> &nbsp; - Room을 활용한 데이터   
+> &nbsp; - Room을 활용한 데이터 입출력
 
 <div>
   <img width="200" src="https://user-images.githubusercontent.com/62230118/82783286-21a70400-9e99-11ea-9179-280a789cd681.jpg">
