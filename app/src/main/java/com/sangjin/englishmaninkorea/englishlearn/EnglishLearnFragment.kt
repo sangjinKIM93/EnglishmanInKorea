@@ -6,9 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.ViewModelProviders
 import com.sangjin.englishmaninkorea.R
 import com.sangjin.englishmaninkorea.database.DB
+import com.sangjin.englishmaninkorea.databinding.FragmentEnglishLearnBinding
+import com.sangjin.englishmaninkorea.englishalarm.alarmcreate.AlarmCreateViewModel
 import com.sangjin.englishmaninkorea.englishlearn.adapter.LearnListAdapter
 import com.sangjin.englishmaninkorea.englishlearn.data.repository.LearnDataRepositoryImpl
 import com.sangjin.englishmaninkorea.englishlearn.data.source.local.LocalDataSourceImpl
@@ -23,34 +27,31 @@ class EnglishLearnFragment : Fragment() {
         LearnListAdapter()
     }
 
+    private val englishLearnViewModel : EnglishLearnViewModel by lazy {
+        ViewModelProviders.of(this).get(EnglishLearnViewModel::class.java)
+    }
+
+    private lateinit var binding : FragmentEnglishLearnBinding
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_english_learn, container, false)
 
-        setRecyclerView(view)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_english_learn, container, false)
+        binding.viewModel = englishLearnViewModel
+        binding.lifecycleOwner = this
 
-        val learnDataRepositoryImpl = LearnDataRepositoryImpl(RemoteDataSourceImpl(), LocalDataSourceImpl())
+        setRecyclerView()
 
-        learnDataRepositoryImpl.getEnglishContent(
-            DB.getInstance(activity!!.applicationContext),
-            onSuccess = { learnList ->
-                learnListAdapter.updateList(learnList)
-                view.progressbar_loading.hide()
-            },
-            onFailure = { t ->
 
-                view.progressbar_loading.hide()
-            }
-        )
-
-        return view
+        return binding.root
     }
 
-    private fun setRecyclerView(view: View) {
-        view.recycler_learn.adapter = learnListAdapter
+
+    private fun setRecyclerView() {
+        binding.recyclerLearn.adapter = learnListAdapter
     }
 
 }
