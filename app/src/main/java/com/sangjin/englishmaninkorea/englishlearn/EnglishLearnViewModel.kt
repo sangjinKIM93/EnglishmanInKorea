@@ -12,36 +12,36 @@ import com.sangjin.englishmaninkorea.englishlearn.data.repository.LearnDataRepos
 import com.sangjin.englishmaninkorea.englishlearn.data.source.local.LocalDataSourceImpl
 import com.sangjin.englishmaninkorea.englishlearn.data.source.remote.RemoteDataSourceImpl
 import kotlinx.android.synthetic.main.fragment_english_learn.view.*
+
 class EnglishLearnViewModel(application: Application) : AndroidViewModel(application) {
 
     private val context = application
-    private val learnDataRepositoryImpl = LearnDataRepositoryImpl(RemoteDataSourceImpl(), LocalDataSourceImpl())
+    private val learnDataRepositoryImpl =
+        LearnDataRepositoryImpl(RemoteDataSourceImpl(), LocalDataSourceImpl())
 
     var learnList = MutableLiveData<List<Learn>>()
 
-    init{
+    var isLoading = MutableLiveData<Boolean>().apply { value = true }
+
+    init {
         getContent()
     }
 
-    private fun getContent(){
+    private fun getContent() {
 
         learnDataRepositoryImpl.getEnglishContent(
             DB.getInstance(context),
             onSuccess = { it ->
                 learnList.value = it
-                Log.d("#### isis : ", "onSuccess")
-                Log.d("#### LiveData: ", learnList.value.toString())
-
-                //view.progressbar_loading.hide()
+                isLoading.value = false
             },
             onFailure = {
-                //view.progressbar_loading.hide()
-                Log.d("#### isis : ", "onFailure")
+                isLoading.value = false
             }
         )
 
-    }
 
+    }
 
 
 }
