@@ -19,6 +19,10 @@ import kotlinx.android.synthetic.main.fragment_english_learn.view.*
 
 class EnglishLearnFragment : Fragment() {
 
+    private val learnListAdapter by lazy {
+        LearnListAdapter()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,8 +30,7 @@ class EnglishLearnFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_english_learn, container, false)
 
-        val learnListAdapter = LearnListAdapter()
-        view.recycler_learn.adapter = learnListAdapter
+        setRecyclerView(view)
 
         val learnDataRepositoryImpl = LearnDataRepositoryImpl(RemoteDataSourceImpl(), LocalDataSourceImpl())
 
@@ -44,6 +47,10 @@ class EnglishLearnFragment : Fragment() {
         )
 
         return view
+    }
+
+    private fun setRecyclerView(view: View) {
+        view.recycler_learn.adapter = learnListAdapter
     }
 
 }
