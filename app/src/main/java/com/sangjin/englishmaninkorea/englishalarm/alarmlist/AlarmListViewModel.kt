@@ -5,8 +5,11 @@ import android.app.Application
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import com.sangjin.englishmaninkorea.englishalarm.alarmshow.AlarmReceiver
 import com.sangjin.englishmaninkorea.englishalarm.data.Alarm
 import com.sangjin.englishmaninkorea.database.DB
@@ -19,10 +22,14 @@ class AlarmListViewModel(application: Application) : AndroidViewModel(applicatio
     private val context = application
     private val alarmDao = DB.getInstance(application).alarmDao
 
+    var isEdited = MutableLiveData<Boolean>()
+    var isCreated = MutableLiveData<Boolean>()
+
     private var _alarmList = alarmDao.getUnCompletedAlarm()
-    var alarmList : LiveData<Alarm>? = _alarmList
+    val alarmList = _alarmList
 
     private val dbScope = CoroutineScope(Dispatchers.IO)
+
 
     fun deleteAlarm(){
         if(_alarmList.value != null){
@@ -33,6 +40,9 @@ class AlarmListViewModel(application: Application) : AndroidViewModel(applicatio
         }
 
         deleteAlarmManager()
+
+        isEdited.value = false
+        isCreated.value = true
     }
 
     fun deleteAlarmManager(){
