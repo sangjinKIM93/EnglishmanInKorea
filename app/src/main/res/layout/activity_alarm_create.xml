@@ -82,15 +82,14 @@
         app:layout_constraintStart_toEndOf="@+id/englishWordET"
         app:layout_constraintTop_toTopOf="@+id/englishWordET" />
 
-    <com.google.android.material.button.MaterialButton
+    <com.sangjin.englishmaninkorea.customview.CustomImageButton
         android:id="@+id/toVocaListBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_orange_light"
         android:onClick="wordAddClick"
-        android:text="단어장에서 선택"
-        android:textSize="16sp"
-        android:textStyle="bold"
+        app:text="단어장에서 선택"
+        app:bg="@android:color/holo_orange_light"
+        app:symbol="@drawable/ic_list_white"
         app:layout_constraintEnd_toEndOf="@+id/wordAddBtn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintBottom_toBottomOf="@+id/guideline"

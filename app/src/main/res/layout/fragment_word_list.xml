@@ -66,18 +66,18 @@
         app:layout_constraintStart_toEndOf="@+id/et_englishWord"
         app:layout_constraintTop_toTopOf="@+id/et_englishWord" />
 
-    <com.google.android.material.button.MaterialButton
+
+    <com.sangjin.englishmaninkorea.customview.CustomImageButton
         android:id="@+id/btn_toWebView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_green_light"
-        android:text="네이버 단어장으로 가기"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        app:text="네이버 영어사전에서 등록"
+        app:bg="@color/green"
+        app:symbol="@drawable/ic_naver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_vocaAdd"
         app:layout_constraintStart_toStartOf="@+id/et_englishWord"
-        app:layout_constraintTop_toBottomOf="@+id/et_koreanMeaning" />
+        app:layout_constraintTop_toBottomOf="@+id/et_koreanMeaning"/>
 
 
 
